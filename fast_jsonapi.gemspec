@@ -5,7 +5,7 @@ require "fast_jsonapi/version"
 
 Gem::Specification.new do |gem|
   gem.name = "fast_jsonapi"
-  gem.version = 0.7
+  gem.version = 0.8
 
   gem.required_ruby_version = '>= 2.0.0' if gem.respond_to? :required_ruby_version=
   gem.required_rubygems_version = Gem::Requirement.new(">= 0") if gem.respond_to? :required_rubygems_version=
