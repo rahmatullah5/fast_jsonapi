@@ -44,6 +44,7 @@ module FastJsonapi
       serializable_hash[:data] = self.class.record_hash(@resource, @fieldsets[self.class.record_type.to_sym], @params)
       serializable_hash[:included] = self.class.get_included_records(@resource, @includes, @known_included_objects, @fieldsets, @params) if @includes.present?
       serializable_hash
+
     end
 
     def hash_for_collection
@@ -194,7 +195,7 @@ module FastJsonapi
         self.relationships_to_serialize = {} if relationships_to_serialize.nil?
         self.cachable_relationships_to_serialize = {} if cachable_relationships_to_serialize.nil?
         self.uncachable_relationships_to_serialize = {} if uncachable_relationships_to_serialize.nil?
-        
+
         if !relationship.cached
           self.uncachable_relationships_to_serialize[relationship.name] = relationship
         else
